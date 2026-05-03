@@ -549,7 +549,7 @@
                         @empty
                             <div class="motor-card hero-slide is-active" data-hero-slide aria-hidden="false">
                                 <div class="card-img">
-                                    <img src="{{ asset('images/motors/yamaha-nmax-155.svg') }}" alt="Katalog motor Kremo">
+                                    <img src="{{ asset('images/motors/yamaha-nmax-155.webp') }}" alt="Katalog motor Kremo">
                                 </div>
                                 <div class="card-body">
                                     <div class="card-meta">
