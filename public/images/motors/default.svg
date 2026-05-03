@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640" role="img" aria-label="Motor Kremo">
+  <rect width="960" height="640" fill="#f8fafc"/>
+  <rect x="72" y="72" width="816" height="496" rx="24" fill="#ffffff" stroke="#dbe4ee" stroke-width="2"/>
+  <path d="M180 430h600" stroke="#cbd5e1" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="292" cy="420" r="72" fill="#0f172a"/>
+  <circle cx="292" cy="420" r="38" fill="#f8fafc"/>
+  <circle cx="700" cy="420" r="72" fill="#0f172a"/>
+  <circle cx="700" cy="420" r="38" fill="#f8fafc"/>
+  <path d="M284 407l106-116h144l75 112" fill="none" stroke="#2563eb" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M431 291l-42 112h172l-64-112" fill="#1d4ed8"/>
+  <path d="M536 289h102c42 0 76 28 88 67l16 54" fill="none" stroke="#f59e0b" stroke-width="30" stroke-linecap="round"/>
+  <path d="M356 270h150" stroke="#0f172a" stroke-width="22" stroke-linecap="round"/>
+  <path d="M610 244l38 48" stroke="#0f172a" stroke-width="18" stroke-linecap="round"/>
+  <path d="M636 244h78" stroke="#0f172a" stroke-width="16" stroke-linecap="round"/>
+  <rect x="240" y="166" width="184" height="34" rx="17" fill="#e2e8f0"/>
+  <rect x="240" y="214" width="280" height="18" rx="9" fill="#dbe4ee"/>
+</svg>

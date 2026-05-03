@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640" role="img" aria-label="Honda CRF250 Rally">
+  <rect width="960" height="640" fill="#f8fafc"/>
+  <rect x="72" y="72" width="816" height="496" rx="24" fill="#ffffff" stroke="#dbe4ee" stroke-width="2"/>
+  <path d="M176 438h608" stroke="#cbd5e1" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="288" cy="421" r="82" fill="#0f172a"/>
+  <circle cx="288" cy="421" r="42" fill="#f8fafc"/>
+  <circle cx="706" cy="421" r="82" fill="#0f172a"/>
+  <circle cx="706" cy="421" r="42" fill="#f8fafc"/>
+  <path d="M298 394l128-132h164l104 132" fill="none" stroke="#dc2626" stroke-width="25" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M390 276c70-68 180-88 292-38l-56 104H408z" fill="#ef4444"/>
+  <path d="M582 242h104c42 0 72 27 82 72l18 78" fill="none" stroke="#f8fafc" stroke-width="32" stroke-linecap="round"/>
+  <path d="M586 244h122" stroke="#2563eb" stroke-width="18" stroke-linecap="round"/>
+  <path d="M645 210l46 72" stroke="#0f172a" stroke-width="18" stroke-linecap="round"/>
+  <path d="M684 210h76" stroke="#0f172a" stroke-width="15" stroke-linecap="round"/>
+  <path d="M202 342h124" stroke="#ef4444" stroke-width="13" stroke-linecap="round"/>
+  <path d="M232 315l58-40" stroke="#0f172a" stroke-width="13" stroke-linecap="round"/>
+  <rect x="194" y="172" width="278" height="34" rx="17" fill="#fee2e2"/>
+  <rect x="194" y="220" width="348" height="18" rx="9" fill="#dbeafe"/>
+</svg>

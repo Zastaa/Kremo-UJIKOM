@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640" role="img" aria-label="Yamaha Aerox 155">
+  <rect width="960" height="640" fill="#f8fafc"/>
+  <rect x="72" y="72" width="816" height="496" rx="24" fill="#ffffff" stroke="#dbe4ee" stroke-width="2"/>
+  <path d="M176 430h608" stroke="#cbd5e1" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="300" cy="420" r="74" fill="#0f172a"/>
+  <circle cx="300" cy="420" r="39" fill="#f8fafc"/>
+  <circle cx="690" cy="420" r="74" fill="#0f172a"/>
+  <circle cx="690" cy="420" r="39" fill="#f8fafc"/>
+  <path d="M310 402l112-122h178l86 122" fill="none" stroke="#334155" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M380 286h268c58 0 98 32 112 78l14 42" fill="none" stroke="#475569" stroke-width="38" stroke-linecap="round"/>
+  <path d="M378 282c66-58 190-72 306-24l-72 94H398z" fill="#1e293b"/>
+  <path d="M470 252h164" stroke="#facc15" stroke-width="20" stroke-linecap="round"/>
+  <path d="M644 234l50 58" stroke="#0f172a" stroke-width="17" stroke-linecap="round"/>
+  <path d="M686 234h72" stroke="#0f172a" stroke-width="15" stroke-linecap="round"/>
+  <path d="M224 356h102" stroke="#facc15" stroke-width="15" stroke-linecap="round"/>
+  <path d="M392 346h202" stroke="#facc15" stroke-width="12" stroke-linecap="round"/>
+  <rect x="194" y="172" width="250" height="34" rx="17" fill="#fef3c7"/>
+  <rect x="194" y="220" width="362" height="18" rx="9" fill="#e2e8f0"/>
+</svg>

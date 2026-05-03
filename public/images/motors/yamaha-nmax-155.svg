@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640" role="img" aria-label="Yamaha NMAX 155">
+  <rect width="960" height="640" fill="#f8fafc"/>
+  <rect x="72" y="72" width="816" height="496" rx="24" fill="#ffffff" stroke="#dbe4ee" stroke-width="2"/>
+  <path d="M176 430h608" stroke="#cbd5e1" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="298" cy="418" r="74" fill="#0f172a"/>
+  <circle cx="298" cy="418" r="40" fill="#f8fafc"/>
+  <circle cx="694" cy="418" r="74" fill="#0f172a"/>
+  <circle cx="694" cy="418" r="40" fill="#f8fafc"/>
+  <path d="M306 400l112-118h188l86 118" fill="none" stroke="#1e293b" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M384 282h270c56 0 96 34 110 82l12 42" fill="none" stroke="#334155" stroke-width="42" stroke-linecap="round"/>
+  <path d="M384 279c58-54 178-70 286-22l-48 96H402z" fill="#0f172a"/>
+  <path d="M464 248h154" stroke="#2563eb" stroke-width="18" stroke-linecap="round"/>
+  <path d="M640 232l48 60" stroke="#0f172a" stroke-width="18" stroke-linecap="round"/>
+  <path d="M680 232h70" stroke="#0f172a" stroke-width="15" stroke-linecap="round"/>
+  <path d="M222 357h96" stroke="#60a5fa" stroke-width="14" stroke-linecap="round"/>
+  <rect x="194" y="172" width="244" height="34" rx="17" fill="#dbeafe"/>
+  <rect x="194" y="220" width="360" height="18" rx="9" fill="#bfdbfe"/>
+</svg>

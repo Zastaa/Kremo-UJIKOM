@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640" role="img" aria-label="Honda Beat">
+  <rect width="960" height="640" fill="#f8fafc"/>
+  <rect x="72" y="72" width="816" height="496" rx="24" fill="#ffffff" stroke="#dbe4ee" stroke-width="2"/>
+  <path d="M176 430h608" stroke="#cbd5e1" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="306" cy="420" r="70" fill="#0f172a"/>
+  <circle cx="306" cy="420" r="36" fill="#f8fafc"/>
+  <circle cx="676" cy="420" r="70" fill="#0f172a"/>
+  <circle cx="676" cy="420" r="36" fill="#f8fafc"/>
+  <path d="M314 404l102-112h176l82 112" fill="none" stroke="#2563eb" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M384 292h230c54 0 90 30 104 76l12 38" fill="none" stroke="#3b82f6" stroke-width="38" stroke-linecap="round"/>
+  <path d="M390 286c54-48 154-63 250-22l-52 86H404z" fill="#1d4ed8"/>
+  <path d="M448 250h132" stroke="#f8fafc" stroke-width="18" stroke-linecap="round"/>
+  <path d="M622 234l44 58" stroke="#0f172a" stroke-width="16" stroke-linecap="round"/>
+  <path d="M660 234h66" stroke="#0f172a" stroke-width="14" stroke-linecap="round"/>
+  <path d="M230 358h92" stroke="#f59e0b" stroke-width="14" stroke-linecap="round"/>
+  <rect x="194" y="172" width="210" height="34" rx="17" fill="#dbeafe"/>
+  <rect x="194" y="220" width="318" height="18" rx="9" fill="#bfdbfe"/>
+</svg>
