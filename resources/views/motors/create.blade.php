@@ -28,8 +28,8 @@
                 </div>
                 <div class="form-group">
                     <label for="berat_gram">Berat Pengiriman (gram)</label>
-                    <input type="number" id="berat_gram" name="berat_gram" class="form-control" value="{{ old('berat_gram', config('rajaongkir.default_weight')) }}" min="1">
-                    <div class="field-hint">Berat ini dipakai otomatis saat membuat pengiriman dari pengajuan motor ini.</div>
+                    <input type="number" id="berat_gram" name="berat_gram" class="form-control" value="{{ old('berat_gram', config('rajaongkir.default_weight')) }}" min="10000" step="1000" required>
+                    <div class="field-hint">Dipakai otomatis untuk hitung ongkir RajaOngkir. Contoh: Beat 90.000g, NMAX 132.000g, sport 180.000g.</div>
                 </div>
                 <div class="form-group">
                     <label for="warna">Warna</label>

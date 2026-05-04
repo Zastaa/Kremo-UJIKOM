@@ -17,7 +17,7 @@ class StoreMotorRequest extends FormRequest
             'nama_motor' => ['required', 'string', 'max:100'],
             'id_jenis' => ['required', 'exists:jenis_motor,id'],
             'harga_jual' => ['required', 'integer', 'min:0'],
-            'berat_gram' => ['nullable', 'integer', 'min:1'],
+            'berat_gram' => ['required', 'integer', 'min:10000'],
             'deskripsi_motor' => ['nullable', 'string'],
             'warna' => ['nullable', 'string', 'max:50'],
             'kapasitas_mesin' => ['nullable', 'string', 'max:10'],

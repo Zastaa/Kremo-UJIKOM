@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Middleware\RoleMiddleware;
+use App\Http\Middleware\ApplySimulatedTime;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -18,9 +19,12 @@ return Application::configure(basePath: dirname(__DIR__))
             'otp_verified' => \App\Http\Middleware\EnsureEmailIsVerifiedWithOtp::class,
         ]);
 
+        $middleware->web(append: [
+            ApplySimulatedTime::class,
+        ]);
+
         $middleware->statefulApi();
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
     })->create();
-

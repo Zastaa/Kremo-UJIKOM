@@ -134,16 +134,19 @@ class PaymentController extends Controller
 
         $packageWeight = $pengajuan->motor?->shipping_weight_grams
             ?: (($data['package_weight'] ?? null) ?: (int) config('rajaongkir.default_weight', 125000));
-        $selectedRate = collect($this->rajaOngkir->calculateDomesticCost(
+        $rates = $this->rajaOngkir->calculateDomesticCost(
             (int) $origin,
             (int) $data['destination_destination_id'],
             (int) $packageWeight,
             $data['courier_code'],
-        ))->first(fn (array $rate) => strtolower((string) $rate['code']) === strtolower($data['courier_code'])
+        );
+        $selectedRate = collect($rates)->first(fn (array $rate) => strtolower((string) $rate['code']) === strtolower($data['courier_code'])
             && strtoupper((string) $rate['service']) === strtoupper($data['courier_service']));
 
         if (! $selectedRate) {
-            return back()->with('error', 'Layanan ongkir yang dipilih sudah tidak tersedia. Silakan hitung ulang ongkir.')->withInput();
+            return back()
+                ->with('error', $this->rajaOngkir->lastCostError() ?: 'Layanan ongkir yang dipilih sudah tidak tersedia. Silakan hitung ulang ongkir.')
+                ->withInput();
         }
 
         $shippingCost = (int) $selectedRate['cost'];

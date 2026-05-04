@@ -60,6 +60,15 @@ class ShippingController extends Controller
             $request->input('price', 'lowest')
         );
 
+        if ($results === []) {
+            return response()->json([
+                'success' => false,
+                'message' => $this->rajaOngkir->lastCostError()
+                    ?: 'Ongkir tidak tersedia dari RajaOngkir untuk rute ini.',
+                'data' => [],
+            ], 422);
+        }
+
         return response()->json(['success' => true, 'data' => $results]);
     }
 

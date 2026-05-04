@@ -94,6 +94,7 @@ class DatabaseSeeder extends Seeder
             'warna' => 'Merah',
             'kapasitas_mesin' => '125cc',
             'tahun_produksi' => 2024,
+            'berat_gram' => 105000,
             'stok' => 15,
         ]);
         $motor2 = Motor::create([
@@ -104,6 +105,7 @@ class DatabaseSeeder extends Seeder
             'warna' => 'Hitam',
             'kapasitas_mesin' => '155cc',
             'tahun_produksi' => 2024,
+            'berat_gram' => 132000,
             'stok' => 10,
         ]);
         $motor3 = Motor::create([
@@ -114,6 +116,7 @@ class DatabaseSeeder extends Seeder
             'warna' => 'Hijau',
             'kapasitas_mesin' => '250cc',
             'tahun_produksi' => 2024,
+            'berat_gram' => 182000,
             'stok' => 5,
         ]);
         Motor::create([
@@ -124,6 +127,7 @@ class DatabaseSeeder extends Seeder
             'warna' => 'Putih Merah',
             'kapasitas_mesin' => '250cc',
             'tahun_produksi' => 2024,
+            'berat_gram' => 152000,
             'stok' => 8,
         ]);
         Motor::create([
@@ -134,6 +138,7 @@ class DatabaseSeeder extends Seeder
             'warna' => 'Biru',
             'kapasitas_mesin' => '110cc',
             'tahun_produksi' => 2024,
+            'berat_gram' => 90000,
             'stok' => 20,
         ]);
         Motor::create([
@@ -144,6 +149,7 @@ class DatabaseSeeder extends Seeder
             'warna' => 'Abu-abu Kuning',
             'kapasitas_mesin' => '155cc',
             'tahun_produksi' => 2024,
+            'berat_gram' => 125000,
             'stok' => 12,
         ]);
 

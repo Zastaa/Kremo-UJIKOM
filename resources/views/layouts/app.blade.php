@@ -253,6 +253,13 @@
                 </a>
                 @endif
 
+                @if(app()->environment(['local', 'testing']) && auth()->user()->hasRole('admin'))
+                <div class="nav-section">Simulasi</div>
+                <a href="{{ route('dev.time-travel.show') }}" class="{{ request()->routeIs('dev.time-travel.*') ? 'active' : '' }}">
+                    <i class="fas fa-clock-rotate-left"></i> Simulasi Waktu
+                </a>
+                @endif
+
                 @if(auth()->user()->hasRole(['admin']))
                 <a href="{{ route('email-logs.index') }}" class="{{ request()->routeIs('email-logs.*') ? 'active' : '' }}">
                     <i class="fas fa-envelope"></i> Log Email
@@ -287,6 +294,17 @@
             </div>
 
             <div class="page-content">
+                @if(app()->environment(['local', 'testing']) && \App\Http\Middleware\ApplySimulatedTime::simulatedAt())
+                    <div class="alert alert-warning">
+                        <i class="fas fa-clock-rotate-left"></i>
+                        <span>
+                            Simulasi waktu aktif: <strong>{{ now()->format('d/m/Y H:i') }}</strong>.
+                            @if(auth()->user()->hasRole('admin'))
+                                <a href="{{ route('dev.time-travel.show') }}">Ubah atau reset</a>
+                            @endif
+                        </span>
+                    </div>
+                @endif
                 @yield('content')
             </div>
         </div>

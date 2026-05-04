@@ -16,6 +16,7 @@ class RajaOngkirService
 {
     private string $apiKey;
     private string $baseUrl;
+    private ?string $lastCostError = null;
 
     public function __construct()
     {
@@ -36,6 +37,11 @@ class RajaOngkirService
     public function defaultCourierCodes(): string
     {
         return (string) config('rajaongkir.default_couriers', 'jne:sicepat:jnt:tiki:lion:pos:rex');
+    }
+
+    public function lastCostError(): ?string
+    {
+        return $this->lastCostError;
     }
 
     public function searchDomesticDestination(string $search, int $limit = 15, int $offset = 0): array
@@ -94,10 +100,13 @@ class RajaOngkirService
         ?string $courier = null,
         string $price = 'lowest'
     ): array {
+        $this->lastCostError = null;
         $courier = $courier ?: $this->defaultCourierCodes();
 
         if (! $this->enabled()) {
-            return $this->fallbackRates($origin, $destination, $weight, $courier);
+            $this->lastCostError = 'API key RajaOngkir belum dikonfigurasi. Ongkir tidak bisa dihitung.';
+
+            return [];
         }
 
         try {
@@ -117,19 +126,29 @@ class RajaOngkirService
                     'body' => $response->body(),
                 ]);
 
-                return $this->fallbackRates($origin, $destination, $weight, $courier);
+                $this->lastCostError = $this->costErrorFromResponse($response);
+
+                return [];
             }
 
-            return collect($response->json('data') ?? [])
+            $rates = collect($response->json('data') ?? [])
                 ->map(fn (array $item) => $this->normalizeRate($item))
                 ->filter(fn (array $item) => filled($item['code']) && filled($item['service']))
                 ->sortBy('cost')
                 ->values()
                 ->all();
+
+            if ($rates === []) {
+                $this->lastCostError = 'RajaOngkir tidak mengembalikan layanan ongkir untuk rute dan kurir ini.';
+            }
+
+            return $rates;
         } catch (\Throwable $e) {
             Log::error('RajaOngkir calculateDomesticCost: ' . $e->getMessage());
 
-            return $this->fallbackRates($origin, $destination, $weight, $courier);
+            $this->lastCostError = 'Gagal menghubungi RajaOngkir. Ongkir tidak bisa dihitung saat ini.';
+
+            return [];
         }
     }
 
@@ -261,7 +280,6 @@ class RajaOngkirService
             'cost' => (int) Arr::get($item, 'cost', 0),
             'etd' => Arr::get($item, 'etd'),
             'raw' => $item,
-            'is_fallback' => false,
         ];
     }
 
@@ -307,33 +325,15 @@ class RajaOngkirService
             ->all();
     }
 
-    private function fallbackRates(int $origin, int $destination, int $weight, string $couriers): array
+    private function costErrorFromResponse(Response $response): string
     {
-        $codes = collect(explode(':', $couriers))
-            ->map(fn (string $code) => Str::lower(trim($code)))
-            ->filter()
-            ->unique()
-            ->take(5)
-            ->values();
+        $message = Arr::get($response->json() ?? [], 'meta.message');
 
-        $base = max(25000, (int) ceil($weight / 1000) * 2200);
+        if (filled($message)) {
+            return 'RajaOngkir tidak menyediakan ongkir: ' . $message;
+        }
 
-        return $codes->map(function (string $code, int $index) use ($base) {
-            $names = $this->couriers();
-            $multiplier = 1 + ($index * 0.08);
-            $service = $index === 0 ? 'REG' : ($index === 1 ? 'CARGO' : 'STANDARD');
-
-            return [
-                'name' => $names[$code] ?? Str::upper($code),
-                'code' => $code,
-                'service' => $service,
-                'description' => 'Estimasi lokal saat API key belum aktif',
-                'cost' => (int) ceil(($base * $multiplier) / 5000) * 5000,
-                'etd' => ($index + 2) . '-' . ($index + 5) . ' hari',
-                'raw' => null,
-                'is_fallback' => true,
-            ];
-        })->all();
+        return 'RajaOngkir tidak menyediakan ongkir untuk request ini. HTTP ' . $response->status() . '.';
     }
 
     private function trackingResult(bool $successful, Response $response): array

@@ -13,6 +13,7 @@
                 <div><strong style="color:var(--text-muted);font-size:0.8rem;">WARNA</strong><p>{{ $motor->warna ?? '-' }}</p></div>
                 <div><strong style="color:var(--text-muted);font-size:0.8rem;">MESIN</strong><p>{{ $motor->kapasitas_mesin ?? '-' }}</p></div>
                 <div><strong style="color:var(--text-muted);font-size:0.8rem;">TAHUN</strong><p>{{ $motor->tahun_produksi ?? '-' }}</p></div>
+                <div><strong style="color:var(--text-muted);font-size:0.8rem;">BERAT KIRIM</strong><p>{{ number_format($motor->shipping_weight_grams, 0, ',', '.') }} gram</p></div>
                 <div><strong style="color:var(--text-muted);font-size:0.8rem;">STOK</strong><p><span class="badge {{ $motor->stok > 0 ? 'badge-success' : 'badge-danger' }}">{{ $motor->stok }}</span></p></div>
             </div>
         </div>

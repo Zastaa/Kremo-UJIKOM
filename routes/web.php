@@ -5,6 +5,7 @@ use App\Http\Controllers\AsuransiController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CustomerProfileController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DevTimeTravelController;
 use App\Http\Controllers\EmailLogController;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\JenisCicilanController;
@@ -46,6 +47,14 @@ Route::post('/verify-email/resend', [OtpController::class, 'resend'])->name('otp
 // === AUTHENTICATED ROUTES ===
 Route::middleware(['auth', 'otp_verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    if (app()->environment(['local', 'testing'])) {
+        Route::middleware('role:admin')->group(function () {
+            Route::get('/dev/time-travel', [DevTimeTravelController::class, 'show'])->name('dev.time-travel.show');
+            Route::post('/dev/time-travel', [DevTimeTravelController::class, 'store'])->name('dev.time-travel.store');
+            Route::post('/dev/time-travel/reset', [DevTimeTravelController::class, 'reset'])->name('dev.time-travel.reset');
+        });
+    }
 
     // Admin only
     Route::middleware('role:admin')->group(function () {
